@@ -21,6 +21,16 @@ loom {
 	}
 }
 
+sourceSets {
+	main {
+		resources {
+			srcDirs += [
+					"src/main/generated"
+			]
+		}
+	}
+}
+
 repositories {
 }
 

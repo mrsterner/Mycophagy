@@ -20,16 +20,18 @@ public class MycoBlock extends Block {
 
 	@Override
 	public void randomTick(BlockState state, ServerWorld world, BlockPos pos, RandomGenerator random) {
-		Pair<BlockState, Block> mutationResult = lookForMutationCandidate(state, world, pos);
-		if(mutationResult != null){
-
+		if(random.nextFloat() < 1F){//TODO
+			Pair<Pair<BlockState, BlockPos>, Block> mutationResult = lookForMutationCandidate(state, world, pos);
+			if(mutationResult != null && world.getBlockState(mutationResult.getFirst().getSecond().up()).isOf(Blocks.AIR)){
+				world.setBlockState(mutationResult.getFirst().getSecond().up(), mutationResult.getSecond().getDefaultState());
+			}
 		}
 	}
 
-	public Pair<BlockState, Block> lookForMutationCandidate(BlockState state, ServerWorld world, BlockPos pos){
+	public Pair<Pair<BlockState, BlockPos>, Block> lookForMutationCandidate(BlockState state, ServerWorld world, BlockPos pos){
 		double rangeCheck = 5;
 		List<BlockState> mutatList = new ArrayList<>();
-		List<BlockState> mycList = new ArrayList<>();
+		List<Pair<BlockState, BlockPos>> mycList = new ArrayList<>();
 		for(double x = -rangeCheck; x <= rangeCheck; ++x) {
 			for (double y = -rangeCheck; y <= rangeCheck; ++y) {
 				for (double z = -rangeCheck; z <= rangeCheck; ++z) {
@@ -38,7 +40,7 @@ public class MycoBlock extends Block {
 					if(blockState.getBlock() instanceof MycoBlock){
 						mutatList.add(world.getBlockState(blockPos));
 					}else if(blockState.isOf(Blocks.MYCELIUM)){
-						mycList.add(world.getBlockState(blockPos));
+						mycList.add(Pair.of(world.getBlockState(blockPos), blockPos));
 					}
 				}
 			}
