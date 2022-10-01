@@ -19,8 +19,6 @@ public class MycoObjects {
 	public static final Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 
 
-
-
 	//BASE SHROOMS
 	public static final Block SUNSHROOM = registerMyco("sunshroom");
 	public static final Block MOONSHROOM = registerMyco("moonshroom");
@@ -79,7 +77,8 @@ public class MycoObjects {
 	public static final Block CLOVESHROOM = registerMyco("cloveshroom");
 
 	//SPECIAL SHROOMS
-
+	public static final Block SANGUINESHROOM = registerMyco("sanguineshroom");
+	public static final Block PUNGENTSHROOM = registerMyco("pungentshroom");
 
 
 

@@ -1,0 +1,7 @@
+{
+  "parent": "mycophagy:block/overlay_cross",
+  "textures": {
+    "overlay": "mycophagy:block/hardy",
+    "plant": "mycophagy:block/cloveshroom"
+  }
+}
