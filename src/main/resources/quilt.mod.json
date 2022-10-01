@@ -1,25 +1,27 @@
 {
 	"schema_version": 1,
 	"quilt_loader": {
-		"group": "com.example",
-		"id": "example_mod",
+		"group": "dev.sterner",
+		"id": "mycophagy",
 		"version": "${version}",
 		"metadata": {
-			"name": "Mod Name",
-			"description": "A short description of your mod.",
+			"name": "Mycophagy",
+			"description": "Mushroom genetics mod",
 			"contributors": {
-				"Your name here": "Owner"
+				"MrSterner": "Owner"
 			},
 			"contact": {
-				"homepage": "https://example.com/",
-				"issues": "https://github.com/QuiltMC/quilt-template-mod/issues",
-				"sources": "https://github.com/QuiltMC/quilt-template-mod"
+				"homepage": "https://bloomhousemc.com/",
+				"issues": "https://github.com/mrsterner/mycophagy/issues",
+				"sources": "https://github.com/mrsterner/mycophagy"
 			},
-			"icon": "assets/example_mod/icon.png"
+			"icon": "assets/mycophagy/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "com.example.example_mod.ExampleMod"
+			"init": "dev.sterner.mycophagy.Mycophagy",
+			"client_init": "dev.sterner.mycophagy.MycophagyClient",
+			"fabric-datagen": "dev.sterner.mycophagy.data.MycoDataGen"
 		},
 		"depends": [
 			{
@@ -36,5 +38,5 @@
 			}
 		]
 	},
-	"mixin": "example_mod.mixins.json"
+	"mixin": "mycophagy.mixins.json"
 }
