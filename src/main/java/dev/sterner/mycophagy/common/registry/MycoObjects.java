@@ -5,6 +5,7 @@ import dev.sterner.mycophagy.common.block.MycoBlock;
 import dev.sterner.mycophagy.common.util.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.MyceliumBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;

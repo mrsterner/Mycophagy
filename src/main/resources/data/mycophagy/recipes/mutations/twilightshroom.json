@@ -1,0 +1,8 @@
+{
+  "type": "mycophagy:mutations",
+  "mushroomA": "mycophagy:sunshroom",
+  "mushroomB": "mycophagy:moonshroom",
+  "result": {
+    "item": "mycophagy:twilightshroom"
+  }
+}
